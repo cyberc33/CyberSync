@@ -9,6 +9,8 @@ CyberSync is a Windows desktop application built with:
 - Windows App SDK
 
 The app stores its configuration under `%APPDATA%\CyberSync`, runs file mirroring with `robocopy`, and creates a daily scheduled task with `schtasks`.
+It supports multiple source folders, and each source is mirrored into its own subfolder inside the chosen destination root.
+The current stable build also supports background tray mode, tray quick actions, Windows notifications, and text-based live sync progress.
 
 ## Requirements for local builds
 Install the following on a Windows 10 or Windows 11 machine:
@@ -121,6 +123,12 @@ That mode runs the sync silently using the saved configuration and exits with:
 - `0` for success
 - `2` for success with warnings
 - `1` for failure
+
+## Logs and diagnostics
+- Sync runs are logged to `%APPDATA%\CyberSync\logs\cybersync-*.log`
+- The saved configuration lives at `%APPDATA%\CyberSync\config.json`
+- The current stable build does not write a custom startup crash report file
+- If the app crashes during startup, use Windows Reliability Monitor or Event Viewer to inspect the crash
 
 ## Troubleshooting
 ### NuGet restore fails

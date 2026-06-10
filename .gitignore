@@ -46,6 +46,8 @@ build-*/
 bin/
 obj/
 .vs/
+.codex-backups/
+out/
 TestResults/
 
 # CMake generated files
